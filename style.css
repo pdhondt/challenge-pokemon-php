@@ -1,0 +1,287 @@
+/* color pattern: #E63946(imperial red), #F1FAEE(honeydew), #A8DADC (powder blue),
+                  #457B9D(celadon blue), #1D3557(prussian blue),#f6D55C (light yellow)
+*/
+
+body {
+    /*display: flex;*/
+    width: 100%;
+    background-image: radial-gradient(circle, #88b9d7, #7badcc, #6fa1c1, #6296b6, #568aab, #53789a, #4f6788, #4a5775, #433f55, #342a36, #1f181c, #000000);
+}
+
+header{
+    /* background: #1d3557;*/
+    margin-bottom: 20px;
+    text-align: center;
+
+
+
+}
+header>h1{
+    /*font-family: 'Pokemon';*/
+    font-family: 'Lobster', cursive;
+    color: #f6D55C;
+    font-size: 120px;
+    text-shadow: 8px 8px #0e1c2f;
+}
+p{
+    font-family: 'Megrim', cursive;
+    font-size: 28px;
+    font-weight: bolder;
+    text-shadow: 1px 1px #153c45
+}
+
+#superContainer{
+    width: 900px;
+    margin: auto;
+}
+
+#main-container{
+
+    border: solid 1px #3e3e3f;
+    border-radius: 20px;
+    background: rgb(230,57,70);
+    background: linear-gradient(195deg, rgba(230,57,70,1) 0%, rgb(91, 21, 26) 91%);
+    box-shadow: 2px 2px #0e1c2f;
+    width: 600px;
+    height: 800px;
+    /*margin-top: 300px;*/
+
+
+}
+#main-screen{
+    background: rgb(233,254,255);
+    background: linear-gradient(195deg, rgba(233,254,255,1) 0%, rgba(26,170,199,1) 91%);
+    box-shadow: 8px 8px #922e32;
+
+    position: relative;
+    border-radius:20px;
+    border:  solid 10px;
+    border-color: #2d2d2d;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 550px;
+    height: 400px;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+#front-sprite{
+    /*border: solid 1px #212121;*/
+    /**background: #F1FAEE;*/
+    position: relative;
+    border-radius:20px;
+    width: 250px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+#poke-sprite{
+    width: 150px;
+    height: 150px;
+    margin-left: 50px;
+}
+#poke-name{
+    margin-left: 70px;
+    width: 25px;
+    height: 15px;
+    color: black;
+}
+#poke-id{
+    margin-left: 70px;
+    width: 10px;
+    height: 10px;
+    color: black;
+}
+#weight{
+    /*background: #F1FAEE;*/
+    position: relative;
+    /*border: solid 1px #212121;*/
+    border-radius:20px;
+    width: 150px; height: 140px;
+    margin-left: 350px;
+    margin-top: -300px;
+
+}
+#height{
+    /* background: #F1FAEE;*/
+    position: relative;
+    /* border: solid 1px #212121;*/
+    border-radius:20px;
+    width: 150px; height: 140px;
+    margin-left: 350px;
+    margin-top: 15px;
+}
+
+#type-screen{
+    background: rgb(233,254,255);
+    background: linear-gradient(195deg, rgba(233,254,255,1) 0%, rgba(26,170,199,1) 91%);
+    border: solid 1px #212121;
+    border-radius:20px;
+    box-shadow: 8px 8px #6c2326;
+    border:  solid 10px;
+    border-color: #2d2d2d;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 300px; height: 200px;
+    margin-left: 25px;
+    margin-top: 50px;
+}
+#type1-s{
+    /* background: #F1FAEE;*/
+    /* border: solid 1px #212121;*/
+    border-radius:20px;
+    width: 110px; height: 150px;
+    margin-top: 25px;
+    margin-left: 25px;
+    font-family: 'Megrim', cursive;
+    font-size: 28px;
+    font-weight: bolder;
+    text-shadow: 1px 1px #153c45
+
+}
+#type2-s{
+    /*background: #F1FAEE;*/
+    /* border: solid 1px #212121;*/
+    border-radius:20px;
+    width: 110px; height: 150px;
+    margin-left: 165px;
+    margin-top: -150px;
+    font-family: 'Megrim', cursive;
+    font-size: 28px;
+    font-weight: bolder;
+    text-shadow: 1px 1px #153c45
+
+}
+#buttons{
+    position: relative;
+
+    width: 110px; height: 110px;
+    margin-left: 415px;
+    margin-top: -150px;
+}
+#btn-r:active, #btn-down:active, #btn-up:active, #btn-l:active{
+    width: 32px;
+    height: 32px;
+
+
+}
+#btn-up, #btn-r, #btn-down, #btn-l{
+
+    background: #f1faee;
+    position: relative;
+    width: 33px; height: 33px;
+    border: solid 1px #212121;
+}
+#btn-up{
+    background: rgb(125,125,125);
+    background: linear-gradient(0deg, rgba(125,125,125,1) 0%, rgba(0,0,0,1) 91%);
+    margin-left: 36px;
+
+}
+#btn-r{
+    margin-left: 72px;
+    background: rgb(125,125,125);
+    background: linear-gradient(90deg, rgba(125,125,125,1) 0%, rgba(0,0,0,1) 91%);
+}
+#btn-down{
+    margin-left: 36px;
+    background: rgb(125,125,125);
+    background: linear-gradient(180deg, rgba(125,125,125,1) 0%, rgba(0,0,0,1) 91%);
+
+}
+#btn-l{
+    margin-top: -70px;
+    background: rgb(125,125,125);
+    background: linear-gradient(260deg, rgba(125,125,125,1) 0%, rgba(0,0,0,1) 91%);
+}
+
+#right-container{
+    background: rgb(230,57,70);
+    background: linear-gradient(195deg, rgba(230,57,70,1) 0%, rgb(91, 21, 26) 91%);
+    box-shadow: 2px 2px #0e1c2f;
+    border-radius: 20px;
+    margin-left: 602px;
+    margin-top: -600px;
+    width: 400px;
+    height: 600px;
+    border: solid 1px #212121
+}
+
+#move-screen{
+    border-radius: 10px;
+    border:  solid 10px;
+    border-color: #2d2d2d;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: rgb(233,254,255);
+    background: linear-gradient(195deg, rgba(233,254,255,1) 0%, rgba(26,170,199,1) 91%);
+    box-shadow: 8px 8px #922e32;
+    width: 300px; height: 300px;
+    margin: 50px;
+}
+#move1, #move2, #move3, #move4{
+    position: absolute;
+    border-radius: 10px;
+    /* background: rgb(233,254,255);*/
+    /* background: linear-gradient(195deg, rgba(233,254,255,1) 0%, rgba(26,170,199,1) 91%);*/
+    width: 150px; height: 150px;
+}
+#move2{
+    margin-left: 150px;
+}
+#move3{
+    margin-left: 150px;
+    margin-top: 150px;
+}
+#move4{
+    margin-top: 150px;
+}
+
+#evolutions{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(195deg, rgb(143, 48, 57) 0%, rgb(85, 21, 28) 91%);
+    box-shadow: 2px 2px #922e32;
+    border-radius: 10px;
+    width:300px; height:50px;
+    margin-left: 50px;
+}
+#img-1, #img-2, #img-3{
+    width: 50px; height:50px;
+    position: absolute;
+}
+#img-1{
+    margin-left: 50px;
+}
+#img-2{
+    margin-left: 125px;
+}
+#img-3{
+    margin-left: 200px;
+}
+
+#input-field{
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(195deg, rgb(143, 48, 57) 0%, rgb(85, 21, 28) 91%);
+    box-shadow: 2px 2px #922e32;
+    height: 50px;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+    /* margin-top: 500px;*/
+}
+input[type="text"]{
+    width: 280px;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    background: rgb(63, 55, 56);
+    background: linear-gradient(195deg, rgb(116, 114, 114) 0%, rgb(204, 204, 204) 91%);
+    margin-left: 7px;
+    margin-top: 15px;
+}
+.hidden{
+    display: none;
+}
