@@ -25,7 +25,14 @@ if (isset($_GET['text-num'])) {
         $evolves_from_id = $evolves_from_array['id'];
     }
 
-
+    $evo_chain_api = $species_array['evolution_chain']['url'];
+    $evo_chain_array = json_decode(file_get_contents($evo_chain_api), true);
+    $evolves_to_array = $evo_chain_array['chain']['evolves_to'];
+    $evolves_to = $evolves_to_array[0]['evolves_to'];
+    $evolves_to_name = $evolves_to[0]['species']['name'];
+    $evolves_to_api = $pok_api_link . $evolves_to_name;
+    $evolves_to_array = json_decode(file_get_contents($evolves_to_api), true);
+    $evolves_to_image = $evolves_to_array['sprites']['front_default'];
 
 }
 
@@ -64,10 +71,10 @@ if (isset($_GET['text-num'])) {
             <div class="type2-s" id="type2-s"></div>
         </div>
         <div class="buttons" id="buttons">
-            <a href="" class="btn-up" id="btn-up">Next evolution</a>
+            <a href="index.php?text-num=<?php echo $evolves_to_name ?>" class="btn-up" id="btn-up">Next evolution</a>
             <a href="index.php?text-num=<?php echo $pok_id + 1 ?>" class="btn-r" id="btn-r">Next pokémon</a>
             <a href="index.php?text-num=<?php echo $evolves_from_id ?>" class="btn-down" id="btn-down">Previous evolution</a>
-            <a href="index.php?text-num=<?php echo $_GET['text-num'] - 1 ?>" class="btn-l" id="btn-l">Previous pokémon</a>
+            <a href="index.php?text-num=<?php echo $pok_id - 1 ?>" class="btn-l" id="btn-l">Previous pokémon</a>
         </div>
     </div>
     <div class="right-container" id="right-container">
@@ -80,7 +87,7 @@ if (isset($_GET['text-num'])) {
         <div class="evolutions" id="evolutions">
             <img src="<?php echo $evolves_from_image ?>" alt="" id="img-1">
             <img src="<?php echo $pok_img ?>" alt="" id="img-2">
-            <img src="" alt="" id="img-3">
+            <img src="<?php echo $evolves_to_image ?>" alt="" id="img-3">
         </div>
         <div class="input-field" id="input-field">
             <form method="get">
