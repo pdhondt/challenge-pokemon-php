@@ -1,40 +1,51 @@
 <?php
 
-if (isset($_GET['text-num'])) {
-    $pok_api_link = 'https://pokeapi.co/api/v2/pokemon/';
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+$pok_api_link = 'https://pokeapi.co/api/v2/pokemon/';
+
+if (empty($_GET['text-num'])) {
+    $pok_api = $pok_api_link . '1/';
+} else {
     $pok_api = $pok_api_link . $_GET['text-num'];
-    $pok_json = file_get_contents($pok_api);
-    $pok_array = json_decode($pok_json, true);
-
-    $pok_name = $pok_array['name'];
-    $pok_id = $pok_array['id'];
-    $pok_img = $pok_array['sprites']['front_default'];
-    $pok_weight = $pok_array['weight'];
-    $pok_height = $pok_array['height'];
-    $pok_moves = array_slice($pok_array['moves'], 0, 4);
-
-    $species_api = $pok_array['species']['url'];
-    $species_json = file_get_contents($species_api);
-    $species_array = json_decode($species_json, true);
-    $evolves_from = $species_array['evolves_from_species'];
-    if (!empty($evolves_from)) {
-        $evolves_from_name = $evolves_from['name'];
-        $evolves_from_api = $pok_api_link . $evolves_from_name;
-        $evolves_from_array = json_decode(file_get_contents($evolves_from_api), true);
-        $evolves_from_image = $evolves_from_array['sprites']['front_default'];
-        $evolves_from_id = $evolves_from_array['id'];
-    }
-
-    $evo_chain_api = $species_array['evolution_chain']['url'];
-    $evo_chain_array = json_decode(file_get_contents($evo_chain_api), true);
-    $evolves_to_array = $evo_chain_array['chain']['evolves_to'];
-    $evolves_to = $evolves_to_array[0]['evolves_to'];
-    $evolves_to_name = $evolves_to[0]['species']['name'];
-    $evolves_to_api = $pok_api_link . $evolves_to_name;
-    $evolves_to_array = json_decode(file_get_contents($evolves_to_api), true);
-    $evolves_to_image = $evolves_to_array['sprites']['front_default'];
-
 }
+
+// if (isset($_GET['text-num'])) {
+
+$pok_json = file_get_contents($pok_api);
+$pok_array = json_decode($pok_json, true);
+
+$pok_name = $pok_array['name'];
+$pok_id = $pok_array['id'];
+$pok_img = $pok_array['sprites']['front_default'];
+$pok_weight = $pok_array['weight'];
+$pok_height = $pok_array['height'];
+$pok_moves = array_slice($pok_array['moves'], 0, 4);
+
+$species_api = $pok_array['species']['url'];
+$species_json = file_get_contents($species_api);
+$species_array = json_decode($species_json, true);
+$evolves_from = $species_array['evolves_from_species'];
+if (!empty($evolves_from)) {
+    $evolves_from_name = $evolves_from['name'];
+    $evolves_from_api = $pok_api_link . $evolves_from_name;
+    $evolves_from_array = json_decode(file_get_contents($evolves_from_api), true);
+    $evolves_from_image = $evolves_from_array['sprites']['front_default'];
+    $evolves_from_id = $evolves_from_array['id'];
+}
+
+$evo_chain_api = $species_array['evolution_chain']['url'];
+$evo_chain_array = json_decode(file_get_contents($evo_chain_api), true);
+$evolves_to_array = $evo_chain_array['chain']['evolves_to'];
+$evolves_to = $evolves_to_array[0]['evolves_to'];
+$evolves_to_name = $evolves_to[0]['species']['name'];
+$evolves_to_api = $pok_api_link . $evolves_to_name;
+$evolves_to_array = json_decode(file_get_contents($evolves_to_api), true);
+$evolves_to_image = $evolves_to_array['sprites']['front_default'];
+
+
 
 ?>
 
